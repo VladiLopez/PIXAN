@@ -304,22 +304,17 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Pines</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="item-intro text-muted">"Decora tu mundo"</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>¡Convierte tu estilo en una obra maestra con nuestros pines! Desde elegantes diseños hasta expresiones audaces, nuestros pines son el toque perfecto para personalizar tu ropa, mochilas o accesorios. Añade un toque de individualidad y creatividad a tu look con nuestra colección única de pines.</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
+                                            <strong>Categoria:</strong>
+                                            Impresión 3D
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Inicio
                                     </button>
                                 </div>
                             </div>
@@ -339,22 +334,18 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Codigos Spotify</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="item-intro text-muted">"Escucha tu vida con Spotify."</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>
+                                        "¡Transforma tus momentos en música tangible con nuestros códigos de Spotify en impresión 3D! Captura tus canciones favoritas en un diseño elegante y personalizado que puedes exhibir en tu hogar. Dale vida a tus recuerdos musicales con esta fusión de tecnología y arte."</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Explore
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
+                                            <strong>Categoria:</strong>
+                                            Impresión 3D
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Inicio
                                     </button>
                                 </div>
                             </div>
@@ -374,22 +365,17 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Litofanías</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="item-intro text-muted">"Manten contigo recuerdos únicos."</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>"Ilumina tus recuerdos en relieve con nuestras litofanías personalizadas. Cada detalle cobra vida en estas impresionantes obras de arte, capturando momentos especiales en un juego de luces y sombras. Dale un toque mágico a tu espacio con nuestras litofanías únicas y emocionantes."</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Finish
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Identity
+                                            <strong>Categoria:</strong>
+                                            Litofanía
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Inicio
                                     </button>
                                 </div>
                             </div>
@@ -409,22 +395,17 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Llaveros</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="item-intro text-muted">"Guarda tus llaves con estilo."</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>"Lleva tus llaves con estilo y funcionalidad con nuestros llaveros. Diseñados para complementar tu estilo y mantener tus llaves seguras, nuestros llaveros son más que un simple accesorio: son una declaración de tu personalidad. Encuentra el complemento perfecto para tu día a día con nuestra colección."</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Lines
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Branding
+                                            <strong>Categoria:</strong>
+                                            Impresión 3D
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Inicio
                                     </button>
                                 </div>
                             </div>
@@ -443,23 +424,20 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Soporte para audifonos</h2>
+                                    <h2 class="text-uppercase">Soporte para controles</h2>
                                     <p class="item-intro text-muted">"Organiza tu espacio de juego."</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>
+                                        "Optimiza tu experiencia de juego con nuestras bases para controles de videojuegos. Diseñadas para mantener tus controles organizados y listos para la acción, nuestras bases ofrecen comodidad y estilo. Domina tus juegos favoritos con una configuración ordenada y profesional. ¡Prepárate para la victoria con nuestras bases para controles!"   
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Southwest
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Website Design
+                                            <strong>Categoria:</strong>
+                                            Impresión 3D
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Inicio
                                     </button>
                                 </div>
                             </div>
@@ -481,20 +459,15 @@
                                     <h2 class="text-uppercase">Porta-audifonos</h2>
                                     <p class="item-intro text-muted">"Sostén tus audifonos con elegancia."</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>"Organiza y protege tus auriculares con nuestros elegantes soportes. Diseñados para combinar funcionalidad y estilo, nuestros soportes mantienen tus auriculares seguros y al alcance mientras añaden un toque de sofisticación a tu espacio. Simplifica tu vida y mejora tu estilo con nuestros prácticos soportes para audífonos."</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
+                                            <strong>Categoria:</strong>
+                                            Impresión 3D
                                         </li>
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Inicio
                                     </button>
                                 </div>
                             </div>

@@ -48,10 +48,6 @@ button[type="submit"] {
     transition: background-color 0.3s; /* Transición suave 
 }*/
 
-button[type="submit"]:hover {
-    background-color: #45a049; /* Cambio de color de fondo al pasar el ratón */
-}
-
 h1, label{
     margin-top: 0;
     margin-bottom: 0.5rem;
