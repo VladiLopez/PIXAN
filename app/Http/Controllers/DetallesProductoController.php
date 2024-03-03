@@ -13,7 +13,11 @@ class DetallesProductoController extends Controller
      */
     public function index()
     {
+        // Obtener todos los detalles de los productos almacenados en la base de datos
+        $detallesProductos = Detalles_Productos::all();
 
+        // Pasar los detalles de los productos a la vista para mostrarlos
+        return view('mostrarTodosDetallesProductos', compact('detallesProductos'));
     }
 
     /**
@@ -78,7 +82,11 @@ class DetallesProductoController extends Controller
      */
     public function show(string $id)
     {
+        // Recuperar el detalle del producto específico de la base de datos
+        $detalleProducto = Detalles_Productos::findOrFail($id);
 
+        // Pasar los detalles del producto a la vista para mostrarlos
+        return view('mostrarDetallesProducto', compact('detalleProducto'));
     }
     
     /**
