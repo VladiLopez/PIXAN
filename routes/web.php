@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('ingresarDetallesProducto');
+    return view('index');
 });
 
 Route::resource('detallesproductos', DetallesProductoController::class);

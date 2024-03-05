@@ -44,6 +44,17 @@ class DetallesProductoController extends Controller
             'imagenes' => 'required|array', // Modificación para manejar una matriz de imágenes
             'imagenes.*' => 'mimes:jpeg,png,jpg,gif|max:10000', // Validación de cada imagen
             'tiempo_entrega' => 'required|string',
+        ],
+        [
+            // Mensajes de error personalizados
+            'nombre.required' => 'El campo nombre es obligatorio.',
+            'precio.required' => 'El campo precio es obligatorio.',
+            'precio.numeric' => 'El campo precio debe ser un número.',
+            'descripcion.required' => 'El campo descripción es obligatorio.',
+            'caracteristicas.required' => 'El campo características es obligatorio.',
+            'colores.required' => 'Debe seleccionar al menos un color.',
+            'imagenes.required' => 'Debe seleccionar al menos una imagen.',
+            'tiempo_entrega.required' => 'El campo tiempo de entrega es obligatorio.',
         ]);
 
         // Convertir los colores a formato JSON
@@ -116,6 +127,17 @@ class DetallesProductoController extends Controller
             'imagenes' => 'nullable|array', // Modificación para permitir imágenes opcionales
             'imagenes.*' => 'nullable|mimes:jpeg,png,jpg,gif|max:10000', // Validación de cada imagen
             'tiempo_entrega' => 'required|string',
+        ],
+        [
+            // Mensajes de error personalizados
+            'nombre.required' => 'El campo nombre es obligatorio.',
+            'precio.required' => 'El campo precio es obligatorio.',
+            'precio.numeric' => 'El campo precio debe ser un número.',
+            'descripcion.required' => 'El campo descripción es obligatorio.',
+            'caracteristicas.required' => 'El campo características es obligatorio.',
+            'colores.required' => 'Debe seleccionar al menos un color.',
+            'imagenes.required' => 'Debe seleccionar al menos una imagen.',
+            'tiempo_entrega.required' => 'El campo tiempo de entrega es obligatorio.',
         ]);
 
         // Recuperar el detalle del producto específico de la base de datos
@@ -167,8 +189,5 @@ class DetallesProductoController extends Controller
 
         // Eliminar el detalle del producto
         $detalleProducto->delete();
-
-        // Redirigir a la página de inicio o a donde desees después de eliminar el producto
-        return redirect()->route('detallesproductos.index');
     }
 }
