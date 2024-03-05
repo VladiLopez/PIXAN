@@ -1,5 +1,22 @@
-/.phpunit.cache
+# Ignorar todo en storage, excepto la carpeta app/public
+/storage/*
+!/storage/app
+/storage/app/*
+!/storage/app/public
+
+# Excluir otras carpetas en storage
+/storage/framework
+/storage/logs
+/storage/framework/sessions
+/storage/framework/views
+/storage/framework/cache
+
+# Otros elementos a ignorar
+.phpunit.cache
 /node_modules
+/public/build
+/public/hot
+/storage/*.key
 /vendor
 .env
 .env.backup
