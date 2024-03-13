@@ -27,8 +27,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.create') }}">Registrar productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/detallesproductos">Mis productos</a></li>
+                        @if (Route::has('login'))
+                                @auth
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.create') }}">Registrar productos</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/detallesproductos">Mis productos</a></li>
+                                @else
+                                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Iniciar sesión</a></li>
+
+                                    @if (Route::has('register'))
+                                        <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Registrarse</a></li>
+                                    @endif
+                                @endauth    
+                        @endif
                     </ul>
                 </div>
             </div>

@@ -13,8 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*Route::get('/', function () {
+    return view('index');
+});*/
+
 Route::get('/', function () {
     return view('index');
 });
 
 Route::resource('detallesproductos', DetallesProductoController::class);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/indexLogeado', function () {
+        return view('indexLogeado');
+    })->name('indexLogeado');
+});
