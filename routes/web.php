@@ -28,7 +28,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/indexLogeado', function () {
-        return view('indexLogeado');
-    })->name('indexLogeado');
+    Route::get('/index', function () {
+        return view('index');
+    })->name('index');
 });
