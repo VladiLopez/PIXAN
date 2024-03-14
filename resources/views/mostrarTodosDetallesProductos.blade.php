@@ -32,7 +32,6 @@
                         <th scope="col">Imágenes</th>
                         <th scope="col">Tiempo de Entrega</th>
                         <th scope="col">Opciones</th>
-                        <!-- Puedes agregar más columnas según tus necesidades -->
                     </tr>
                 </thead>
                 <tbody>
@@ -70,7 +69,6 @@
                                 </a>
                             </div>
                         </td>
-                        <!-- Puedes agregar más celdas según tus necesidades -->
                     </tr>
 
                     <!-- Modal de confirmación para eliminar -->

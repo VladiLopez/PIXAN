@@ -20,11 +20,12 @@
         <h1 class="section-heading text-uppercase text-center">Usuarios</h1>
             <table class="table table-striped align-middle">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Administrador</th>
+                    <tr class="table-primary">
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Administrador</th>
+                        <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +34,22 @@
                             <td>{{ $usuario->id }}</td>
                             <td>{{ $usuario->name }}</td>
                             <td>{{ $usuario->email }}</td>
+                            <td>Si/No</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+
+                                    <a href="" class="btn btn-success btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <a type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </td>    
                         </tr>
                     @endforeach
                 </tbody>

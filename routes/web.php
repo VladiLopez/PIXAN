@@ -3,6 +3,7 @@
 use App\Http\Controllers\DetallesProductoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,25 +14,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-/*Route::get('/', function () {
-    return view('index');
-});*/
-
 Route::get('/', function () {
-    return view('index');
+    if (Auth::check()) {
+        if (Auth::user()->is_admin) {
+            return view('indexUsers');
+        } else {
+            return view('index');
+        }
+    } else {
+        return view('inicio');
+    }
 });
+
 
 Route::resource('detallesproductos', DetallesProductoController::class);
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/index', function () {
-        return view('index');
-    })->name('index');
-});
-
-Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])->name('usuarios.index');
+Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])->name('usuarios.index')->middleware('admin');
