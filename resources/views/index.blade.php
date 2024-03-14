@@ -31,6 +31,24 @@
                                 @auth
                                     <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.create') }}">Registrar productos</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/detallesproductos">Mis productos</a></li>
+                                    <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('profile.show') }}" style="text-transform: none;">Perfil</a></li>
+                                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                                <li><a class="dropdown-item" href="{{ route('api-tokens.index') }}">API Tokens</a></li>
+                                            @endif
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                    <button type="submit" class="dropdown-item">Cerrar sesión</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 @else
                                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Iniciar sesión</a></li>
 
@@ -226,13 +244,6 @@
                     <h2 class="section-heading text-uppercase">Contactanos</h2>
                     <h3 class="section-subheading text-muted">Para más información escríbenos, nos complacerá ayudarte. </h3>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
@@ -487,10 +498,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

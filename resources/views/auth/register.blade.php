@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="/assets/img/navbar-logo.jpg" class="h-20 w-auto rounded-md" />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
