@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DetallesProductoController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::middleware([
         return view('index');
     })->name('index');
 });
+
+Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])->name('usuarios.index');

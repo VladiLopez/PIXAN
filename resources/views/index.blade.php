@@ -31,6 +31,7 @@
                                 @auth
                                     <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.create') }}">Registrar productos</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/detallesproductos">Mis productos</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios</a></li>
                                     <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{ Auth::user()->name }}

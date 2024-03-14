@@ -12,7 +12,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('index) }}" :active="request()->routeIs('index')">
+                    <x-nav-link href="{{ route('index') }}" :active="request()->routeIs('index')">
                         {{ __('Index') }}
                     </x-nav-link>
                 </div>
