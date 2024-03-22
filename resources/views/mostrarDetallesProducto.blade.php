@@ -41,7 +41,7 @@
                 <td><strong>Colores:</strong></td>
                 <td>
                     @foreach(json_decode($detalleProducto->colores) as $color)
-                        {{ $color }},
+                        <span class="color-circle" style="background-color: {{ $color }};"></span>
                     @endforeach
                 </td>
             </tr>

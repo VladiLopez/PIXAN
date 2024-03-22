@@ -34,14 +34,19 @@
                             <td>{{ $usuario->id }}</td>
                             <td>{{ $usuario->name }}</td>
                             <td>{{ $usuario->email }}</td>
-                            <td>Si/No</td>
+                            <td>
+                                @if($usuario->is_admin == 0)
+                                    Sí
+                                @else
+                                    No
+                                @endif
+                            </td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="">
+                                    <a href="{{ route('usuarios.show', $usuario->id) }}" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
                                         <i class="fas fa-eye"></i>
                                     </a>
-
-                                    <a href="" class="btn btn-success btn-sm">
+                                    <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-success btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
 

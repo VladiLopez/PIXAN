@@ -5,6 +5,16 @@
     padding: 20px; /* Espaciado interno */
 }
 
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 10%;
+    border: 1px solid #000;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
 body, html {
     margin: 0;
     padding: 0;

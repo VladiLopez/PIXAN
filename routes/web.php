@@ -31,6 +31,13 @@ Route::resource('detallesproductos', DetallesProductoController::class);
 
 Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])->name('usuarios.index')->middleware('auth','admin');
 
+Route::get('/ViewUsuario/{id}', [UserController::class, 'mostrarUsuarioEsp'])->name('usuarios.show')->middleware('auth','admin');
+
+Route::get('/usuarios/edit/{id}', [UserController::class, 'editarUsuario'])->name('usuarios.edit');
+
+Route::put('/usuarios/{id}', [UserController::class, 'actualizarUsuario'])->name('usuarios.update');
+
+
 Route::get('/detallesproductos', [DetallesProductoController::class, 'index'])
     ->name('detallesproductos.index')
     ->middleware('auth', 'admin');
