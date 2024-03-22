@@ -11,6 +11,7 @@
     <div class="botones-container">
         <a href="/">INICIO</a>
         <a href="/detallesproductos">MIS PRODUCTOS</a>
+        <a href="{{ route('usuarios.index') }}">USUARIOS</a></li>
     </div>
     <div class="container mt-1">
     <h1 class="section-heading text-uppercase text-center">Ingresar Nuevo Producto</h1>

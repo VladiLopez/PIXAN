@@ -11,6 +11,7 @@
 <div class="botones-container">
         <a href="/">INICIO</a>
         <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>
+        <a href="/detallesproductos">MIS PRODUCTOS</a>
 </div>
 <div class="container mt-1">
     <h1 class="text-center">Editar Usuario</h1>
@@ -35,8 +36,13 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="imagenes" class="form-label">Foto de Perfil</label>
-                    <input type="file" class="form-control" id="imagenes" name="imagenes[]">
+                    @foreach(explode(',', $usuario->profile_photo_path) as $imagen)
+                    <div style="width: 100px;">
+                        <img class="img-thumbnail" src="{{ asset('storage/' . $imagen) }}" alt="Imagen del Producto">   
+                    </div>
+                    @endforeach
+                    <label for="profile_photo_path" class="form-label">Foto de Perfil</label>
+                    <input type="file" class="form-control" id="profile_photo_path" name="profile_photo_path[]">
                 </div>
         </div>
         <div class="card-footer">

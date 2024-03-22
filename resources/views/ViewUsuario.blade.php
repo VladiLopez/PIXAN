@@ -12,15 +12,25 @@
     <link rel="stylesheet" href="{{ asset('css/stylesIngresar.css') }}">
 </head>
 <body>
+    <div class="botones-container">
+        <a href="/">INICIO</a>
+        <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>}
+        <a href="/detallesproductos">MIS PRODUCTOS</a>
+    </div>
     <div class="container">
         <h1 class="text-center">Detalles del Usuario</h1>
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="{{ asset('storage/' . $usuario->foto_perfil) }}" alt="Foto de Perfil" class="img-fluid">
+                        @foreach(explode(',', $usuario->profile_photo_path) as $imagen)
+                            <div style="width: 220px;">
+                                <img class="img-thumbnail" src="{{ asset('storage/' . $imagen) }}" alt="Foto de Perfil">   
+                            </div>
+                        @endforeach
                     </div>
                     <div class="col-md-6">
+                        <p><strong>ID:</strong> {{ $usuario->id }}</p>
                         <p><strong>Nombre:</strong> {{ $usuario->name }}</p>
                         <p><strong>Correo:</strong> {{ $usuario->email }}</p>
                         <p><strong>Administrador:</strong> 
@@ -34,7 +44,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a href="{{ route('usuarios.index') }}" class="btn btn-primary">Volver a la Lista de Usuarios</a>
+                <a href="{{ route('usuarios.index') }}" class="btn btn-primary">Regresar</a>
             </div>
         </div>
     </div>

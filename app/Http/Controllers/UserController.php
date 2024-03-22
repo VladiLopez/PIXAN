@@ -28,22 +28,25 @@ class UserController extends Controller
 
     public function actualizarUsuario(Request $request, $id)
     {
-        // Procesar y guardar las imágenes
-        $imagenes = [];
-        foreach ($request->file('imagenes') as $imagen) {
-            $ruta = $imagen->store('/imagenes'); // Guardar la imagen en una carpeta 'imagenes' en el almacenamiento de Laravel
-            $imagen->store('/public/imagenes'); // Consultar la imagen en una carpeta 'public/imagenes' en el almacenamiento de Laravel
-            $imagenes[] = $ruta; // Guardar la ruta de la imagen para su posterior almacenamiento en la base de datos
+        $usuario = User::findOrFail($id);
+
+        if ($request->hasFile('profile_photo_path')) {
+            // Procesar y guardar las imágenes
+            $profile_photo_path = [];
+            foreach ($request->file('profile_photo_path') as $imagen) {
+                $ruta = $imagen->store('/profile_photo'); // Guardar la imagen en una carpeta 'imagenes' en el almacenamiento de Laravel
+                $imagen->store('/public/profile_photo'); // Consultar la imagen en una carpeta 'public/imagenes' en el almacenamiento de Laravel
+                $profile_photo_path[] = $ruta; // Guardar la ruta de la imagen para su posterior almacenamiento en la base de datos
+            }
+            // Convertir el arreglo de rutas de imágenes en una cadena de texto separada por comas
+            $imagenesCadena = implode(',', $profile_photo_path);
+            $usuario->profile_photo_path = $imagenesCadena;
         }
 
-        // Convertir el arreglo de rutas de imágenes en una cadena de texto separada por comas
-        $imagenesCadena = implode(',', $imagenes);
-
-        $usuario = User::findOrFail($id);
         $usuario->name = $request->input('nombre');
         $usuario->email = $request->input('email');
         $usuario->is_admin = $request->input('is_admin');
-        $usuario->imagenes = $imagenesCadena;
+        
 
         $usuario->save();
 
