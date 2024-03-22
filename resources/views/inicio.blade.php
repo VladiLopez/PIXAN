@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -27,8 +27,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('catalogo.productos') }}">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Registrarse</a></li>
                     </ul>
                 </div>
             </div>

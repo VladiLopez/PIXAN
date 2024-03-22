@@ -29,4 +29,31 @@ Route::get('/', function () {
 
 Route::resource('detallesproductos', DetallesProductoController::class);
 
-Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])->name('usuarios.index')->middleware('admin');
+Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])->name('usuarios.index')->middleware('auth','admin');
+
+Route::get('/detallesproductos', [DetallesProductoController::class, 'index'])
+    ->name('detallesproductos.index')
+    ->middleware('auth', 'admin');
+
+Route::get('/detallesproductos/create', [DetallesProductoController::class, 'create'])
+    ->name('detallesproductos.create')
+    ->middleware('auth', 'admin');
+
+Route::get('/detallesproductos/show/{id}', [DetallesProductoController::class, 'show'])
+    ->name('detallesproductos.show')
+    ->middleware('auth', 'admin');
+
+Route::get('/detallesproductos/edit/{id}', [DetallesProductoController::class, 'edit'])
+    ->name('detallesproductos.edit')
+    ->middleware('auth', 'admin');
+
+    Route::delete('/detallesproductos/{id}', [DetallesProductoController::class, 'destroy'])
+    ->name('detallesproductos.destroy')
+    ->middleware('auth', 'admin');
+
+Route::put('/detallesproductos/update/{id}', [DetallesProductoController::class, 'update'])
+    ->name('detallesproductos.update')
+    ->middleware('auth', 'admin');
+
+Route::get('/catalogo', [DetallesProductoController::class, 'catalogo'])->name('catalogo.productos');
+Route::get('/detallesCatalogo/{id}', [DetallesProductoController::class, 'detallesCatalogo'])->name('detallesCatalogo.productos');

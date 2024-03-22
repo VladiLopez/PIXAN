@@ -20,6 +20,15 @@ class DetallesProductoController extends Controller
         return view('mostrarTodosDetallesProductos', compact('detallesProductos'));
     }
 
+    public function catalogo()
+    {
+        // Obtener todos los detalles de los productos almacenados en la base de datos
+        $detallesProductos = Detalles_Productos::all();
+
+        // Pasar los detalles de los productos a la vista para mostrarlos
+        return view('catalogo', compact('detallesProductos'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -98,6 +107,15 @@ class DetallesProductoController extends Controller
 
         // Pasar los detalles del producto a la vista para mostrarlos
         return view('mostrarDetallesProducto', compact('detalleProducto'));
+    }
+
+    public function detallesCatalogo($id)
+    {
+        // Obtener los detalles del producto con el ID proporcionado
+        $producto = Detalles_Productos::findOrFail($id);
+
+        // Pasar los detalles del producto a la vista
+        return view('detallesCatalogo', compact('producto'));
     }
     
     /**

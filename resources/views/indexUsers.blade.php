@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -29,7 +29,7 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         @if (Route::has('login'))
                                 @auth
-                                    <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.create') }}">Catalogo</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('catalogo.productos') }}">Catálogo</a></li>
                                     <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{ Auth::user()->name }}

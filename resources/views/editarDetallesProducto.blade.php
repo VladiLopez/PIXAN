@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,27 +47,26 @@
 
         <label>Colores:</label><br>
             <div class="d-flex flex-row">
-            <input type="checkbox" class="form-check-input m-2 me-0" id="verde" name="colores[]" value="verde" {{ in_array('verde', json_decode($detalleProducto->colores)) ? 'checked' : '' }}>
+                <input type="checkbox" class="form-check-input m-2 me-0 " id="verde" name="colores[]" value="#51E033">
                 <label class="m-1" for="verde">Verde</label><br>
-            
-            <input type="checkbox" class="form-check-input m-2 me-0" id="rojo" name="colores[]" value="rojo" {{ in_array('rojo', json_decode($detalleProducto->colores)) ? 'checked' : '' }}>
-            <label class="m-1" for="rojo">Rojo</label><br>
-            
-            <input type="checkbox" class="form-check-input m-2 me-0" id="amarillo" name="colores[]" value="amarillo" {{ in_array('amarillo', json_decode($detalleProducto->colores)) ? 'checked' : '' }}>
-            <label class="m-1" for="amarillo">Amarillo</label><br>
-            
-            <input type="checkbox" class="form-check-input m-2 me-0" id="blanco" name="colores[]" value="blanco" {{ in_array('blanco', json_decode($detalleProducto->colores)) ? 'checked' : '' }}>
-            <label class="m-1" for="blanco">Blanco</label><br>
-            
-            <input type="checkbox" class="form-check-input m-2 me-0" id="negro" name="colores[]" value="negro" {{ in_array('negro', json_decode($detalleProducto->colores)) ? 'checked' : '' }}>
-            <label class="m-1" for="negro">Negro</label><br>
-            
-            <input type="checkbox" class="form-check-input m-2 me-0" id="azul" name="colores[]" value="azul" {{ in_array('azul', json_decode($detalleProducto->colores)) ? 'checked' : '' }}>
-            <label class="m-1" for="azul">Azul</label><br>
-
-            <input type="checkbox" class="form-check-input m-2 me-0" id="gris" name="colores[]" value="azul" {{ in_array('gris', json_decode($detalleProducto->colores)) ? 'checked' : '' }}>
-            <label class="m-1" for="gris">Gris</label><br>
                 
+                <input type="checkbox" class="form-check-input m-2 me-0" id="rojo" name="colores[]" value="#E10600">
+                <label class="m-1" for="rojo">Rojo</label><br>
+                
+                <input type="checkbox" class="form-check-input m-2 me-0" id="amarillo" name="colores[]" value="#E1C401">
+                <label class="m-1" for="amarillo">Amarillo</label><br>
+                
+                <input type="checkbox" class="form-check-input m-2 me-0" id="blanco" name="colores[]" value="#FFFFFF">
+                <label class="m-1" for="blanco">Blanco</label><br>
+                
+                <input type="checkbox" class="form-check-input m-2 me-0" id="negro" name="colores[]" value="#000000">
+                <label class="m-1" for="negro">Negro</label><br>
+                
+                <input type="checkbox" class="form-check-input m-2 me-0" id="azul" name="colores[]" value="#000BE0">
+                <label class="m-1" for="azul">Azul</label><br>
+
+                <input type="checkbox" class="form-check-input m-2 me-0" id="gris" name="colores[]" value="	#808080">
+                <label class="m-1" for="gris">Gris</label><br>
             </div>
             @error('colores')
                 <div class="alert alert-danger">{{ $message }}</div>

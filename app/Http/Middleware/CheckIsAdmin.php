@@ -12,6 +12,7 @@ class CheckIsAdmin
             return $next($request);
         }
 
-        abort(403, 'Acceso no autorizado.');
+        // Simplemente aborta la solicitud sin enviar ninguna respuesta
+        abort(204); // Código de respuesta 204: No Content
     }
 }

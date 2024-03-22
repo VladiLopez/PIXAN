@@ -49,25 +49,25 @@
 
         <label>Colores:</label><br>
         <div class="d-flex flex-row">
-        <input type="checkbox" class="form-check-input m-2 me-0 " id="verde" name="colores[]" value="verde">
+            <input type="checkbox" class="form-check-input m-2 me-0 " id="verde" name="colores[]" value="#51E033">
             <label class="m-1" for="verde">Verde</label><br>
             
-            <input type="checkbox" class="form-check-input m-2 me-0" id="rojo" name="colores[]" value="rojo">
+            <input type="checkbox" class="form-check-input m-2 me-0" id="rojo" name="colores[]" value="#E10600">
             <label class="m-1" for="rojo">Rojo</label><br>
             
-            <input type="checkbox" class="form-check-input m-2 me-0" id="amarillo" name="colores[]" value="amarillo">
+            <input type="checkbox" class="form-check-input m-2 me-0" id="amarillo" name="colores[]" value="#E1C401">
             <label class="m-1" for="amarillo">Amarillo</label><br>
             
-            <input type="checkbox" class="form-check-input m-2 me-0" id="blanco" name="colores[]" value="blanco">
+            <input type="checkbox" class="form-check-input m-2 me-0" id="blanco" name="colores[]" value="#FFFFFF">
             <label class="m-1" for="blanco">Blanco</label><br>
             
-            <input type="checkbox" class="form-check-input m-2 me-0" id="negro" name="colores[]" value="negro">
+            <input type="checkbox" class="form-check-input m-2 me-0" id="negro" name="colores[]" value="#000000">
             <label class="m-1" for="negro">Negro</label><br>
             
-            <input type="checkbox" class="form-check-input m-2 me-0" id="azul" name="colores[]" value="azul">
+            <input type="checkbox" class="form-check-input m-2 me-0" id="azul" name="colores[]" value="#000BE0">
             <label class="m-1" for="azul">Azul</label><br>
 
-            <input type="checkbox" class="form-check-input m-2 me-0" id="gris" name="colores[]" value="gris">
+            <input type="checkbox" class="form-check-input m-2 me-0" id="gris" name="colores[]" value="	#808080">
             <label class="m-1" for="gris">Gris</label><br>
         </div>
         @error('colores')
