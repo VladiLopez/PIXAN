@@ -15,6 +15,7 @@
     <div class="botones-container">
         <a href="/">INICIO</a>
         <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>
+        <a href="{{ route('usuarios.index') }}">USUARIOS</a></li>
     </div>
     <div class="container mt-1">
         <h1 class="section-heading text-uppercase text-center">Mostrar Detalles de Productos</h1>

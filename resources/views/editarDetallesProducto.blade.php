@@ -73,7 +73,6 @@
             @enderror
 
         <label for="imagenes" class="form-label">Imágenes:</label><br>
-            <!-- Aquí puedes mostrar las imágenes actuales del producto -->
             @foreach(explode(',', $detalleProducto->imagenes) as $imagen)
                 <div style="width: 100px;">
                     <img class="img-thumbnail" src="{{ asset('storage/' . $imagen) }}" alt="Imagen del Producto">   
