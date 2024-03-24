@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 use App\Http\Controllers\InventarioController;
+=======
+
+>>>>>>> 9ef4fb24689f3c94f968d82e094c38d8078c75f3
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('index');
 });
 
 Route::resource('detallesinventario', InventarioController::class);
+=======
+    return view('welcome');
+});
+>>>>>>> 9ef4fb24689f3c94f968d82e094c38d8078c75f3

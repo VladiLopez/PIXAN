@@ -52,4 +52,8 @@ $response = $kernel->handle(
     $request = Request::capture()
 )->send();
 
+<<<<<<< HEAD
 $kernel->terminate($request, $response);
+=======
+$kernel->terminate($request, $response);
+>>>>>>> 9ef4fb24689f3c94f968d82e094c38d8078c75f3
