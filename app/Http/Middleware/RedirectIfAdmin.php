@@ -16,7 +16,8 @@ class RedirectIfAdmin
     public function handle(Request $request, Closure $next)
     {
         if (auth()->check() && auth()->user()->is_admin) {
-            return redirect('/'); // Redirige a la raíz de la aplicación
+            //return redirect('error403'); // Redirige a la raíz de la aplicación
+            return response()->view('errors.403', [], 403);
         }
 
         return $next($request);

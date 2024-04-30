@@ -29,13 +29,21 @@ Route::get('/', function () {
 
 Route::resource('detallesproductos', DetallesProductoController::class);
 
-Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])->name('usuarios.index')->middleware('auth','admin');
+Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])
+    ->name('usuarios.index')
+    ->middleware('auth','admin');
 
-Route::get('/ViewUsuario/{id}', [UserController::class, 'mostrarUsuarioEsp'])->name('usuarios.show')->middleware('auth','admin');
+Route::get('/ViewUsuario/{id}', [UserController::class, 'mostrarUsuarioEsp'])
+    ->name('usuarios.show')
+    ->middleware('auth','admin');
 
-Route::get('/usuarios/edit/{id}', [UserController::class, 'editarUsuario'])->name('usuarios.edit');
+Route::get('/usuarios/edit/{id}', [UserController::class, 'editarUsuario'])
+    ->name('usuarios.edit')
+    ->middleware('auth','admin');
 
-Route::put('/usuarios/{id}', [UserController::class, 'actualizarUsuario'])->name('usuarios.update');
+Route::put('/usuarios/{id}', [UserController::class, 'actualizarUsuario'])
+    ->name('usuarios.update')
+    ->middleware('auth','admin');
 
 
 Route::get('/detallesproductos', [DetallesProductoController::class, 'index'])
@@ -54,7 +62,7 @@ Route::get('/detallesproductos/edit/{id}', [DetallesProductoController::class, '
     ->name('detallesproductos.edit')
     ->middleware('auth', 'admin');
 
-    Route::delete('/detallesproductos/{id}', [DetallesProductoController::class, 'destroy'])
+Route::delete('/detallesproductos/{id}', [DetallesProductoController::class, 'destroy'])
     ->name('detallesproductos.destroy')
     ->middleware('auth', 'admin');
 
