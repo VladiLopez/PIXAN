@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -52,4 +51,16 @@ class UserController extends Controller
 
         return redirect()->route('usuarios.index')->with('success', 'Usuario actualizado exitosamente');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        // Buscar el detalle del producto específico en la base de datos
+        $usuario = User::findOrFail($id);
+    
+        // Lógica para eliminar suave (soft delete)
+        $usuario->delete();
+    }    
 }

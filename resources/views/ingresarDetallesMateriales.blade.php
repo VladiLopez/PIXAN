@@ -10,14 +10,14 @@
 <body>
     <div class="botones-container">
         <a href="/">INICIO</a>
+        <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>
         <a href="/detallesproductos">MIS PRODUCTOS</a>
-        <a href="{{ route('stockmateriales.create') }}">REGISTRAR MATERIALES</a>
-        <a href="{{ route('stockmateriales.index') }}">MIS MATERIALES</a>
+        <a href="/stockmateriales">MIS MATERIALES</a>
         <a href="{{ route('usuarios.index') }}">USUARIOS</a></li>
     </div>
     <div class="container mt-1">
-    <h1 class="section-heading text-uppercase text-center">Ingresar Nuevo Producto</h1>
-    <form action="{{ route('detallesproductos.store') }}" method="POST" enctype="multipart/form-data" >
+    <h1 class="section-heading text-uppercase text-center">Ingresar Nuevo Material</h1>
+    <form action="{{ route('stockmateriales.store') }}" method="POST" enctype="multipart/form-data" >
         @csrf
         <label for="nombre" class="form-label">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre" class="form-control" value="{{ old('nombre') }}" maxlength="100">
@@ -26,29 +26,22 @@
         @enderror
         <br>
 
-        <label for="precio" class="form-label">Precio:</label><br>
-        <input type="number" id="precio" name="precio" class="form-control" value="{{ old('precio') }}" maxlength="255">
-        @error('precio')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-        <br>
-
-        <div class="form-floating">
-            <textarea id="descripcion" class="form-control" style="height: 100px;" name="descripcion" maxlength="255">{{ old('descripcion') }}</textarea>
-            <label for="descripcion" >Descripción:</label>
-        </div>
-        @error('descripcion')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
         
         <div class="form-floating">
-            <textarea id="caracteristicas" class="form-control" style="height: 100px;" name="caracteristicas" placeholder="Describa las caracteristias :p">{{ old('caracteristicas') }}</textarea>
+            <textarea id="caracteristicas" class="form-control" style="height: 100px;" name="caracteristicas" maxlength="250">{{ old('caracteristicas') }}</textarea>
             <label for="caracteristicas">Características:</label>
         </div>
         @error('caracteristicas')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         
+        <div class="form-floating">
+            <textarea id="marca" class="form-control" style="height: 100px;" name="marca" maxlength="250">{{ old('marca') }}</textarea>
+            <label for="marca">Marca:</label>
+        </div>
+        @error('marca')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <label>Colores:</label><br>
         <div class="d-flex flex-row">
@@ -77,16 +70,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <label for="imagenes" class="form-label">Imágenes:</label><br>
-        <input type="file" id="imagenes" class="form-control" name="imagenes[]" multiple>
-        @error('imagenes')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-        <br>
-
-        <label for="tiempo_entrega" class="form-label">Tiempo de Entrega:</label><br>
-        <input type="text" id="tiempo_entrega" name="tiempo_entrega" class="form-control" value="{{ old('tiempo_entrega') }}">
-        @error('tiempo_entrega')
+        <label for="imagen" class="form-label">Imágen:</label><br>
+        <input type="file" id="imagenes" class="form-control" name="imagen[]">
+        @error('imagen')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <br>

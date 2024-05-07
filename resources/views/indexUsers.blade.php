@@ -48,6 +48,9 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    <a href="{{ route('verCarrito') }}"> 
+                                        <img src="assets/img/carrito-de-compras.ico" alt="Carrito de compras" style="width: 32px; height: 32px;">
+                                    </a>
                                 @else
                                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Iniciar sesión</a></li>
 

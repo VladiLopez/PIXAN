@@ -4,10 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Detalles_Productos;
+use App\Models\Comentario;
 use Illuminate\Support\Facades\Storage;
 
 class DetallesProductoController extends Controller
 {
+    public function mostrarComentarios($id)
+    {
+        // Cargar los detalles del producto con sus comentarios
+        $detallesProducto = Detalles_Productos::with('comentarios')->findOrFail($id);
+        
+        // Luego, cargarías la vista de comentarios y pasarías los detalles del producto a la vista
+        return view('mostrarComentarios', compact('detallesProducto'));
+    }
+    
+    public function agregar(Request $request, $id)
+    {
+        // Validar los datos del formulario
+        $request->validate([
+            'contenido' => 'required|string',
+        ]);
+
+        // Encontrar el detalle del producto asociado al ID
+        $detalleProducto = Detalles_Productos::findOrFail($id);
+
+        // Crear un nuevo comentario
+        $comentario = new Comentario();
+        $comentario->contenido = $request->contenido;
+
+        // Guardar el comentario asociado al detalle del producto
+        $detalleProducto->comentarios()->save($comentario);
+
+        // Redirigir a la página de comentarios o a donde desees
+        return redirect()->back()->with('success', 'Comentario agregado correctamente.');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -27,6 +57,15 @@ class DetallesProductoController extends Controller
 
         // Pasar los detalles de los productos a la vista para mostrarlos
         return view('catalogo', compact('detallesProductos'));
+    }
+
+    public function catalogoNotUser()
+    {
+        // Obtener todos los detalles de los productos almacenados en la base de datos
+        $detallesProductos = Detalles_Productos::all();
+
+        // Pasar los detalles de los productos a la vista para mostrarlos
+        return view('catalogoNotUser', compact('detallesProductos'));
     }
 
     /**
@@ -196,16 +235,8 @@ class DetallesProductoController extends Controller
     {
         // Buscar el detalle del producto específico en la base de datos
         $detalleProducto = Detalles_Productos::findOrFail($id);
-
-        // Eliminar las imágenes asociadas al producto del almacenamiento de Laravel
-        $imagenes = explode(',', $detalleProducto->imagenes);
-        foreach ($imagenes as $imagen) {
-            // Eliminar la imagen del almacenamiento
-            Storage::delete($imagen);
-            Storage::delete("public/".$imagen);
-        }
-
-        // Eliminar el detalle del producto
+    
+        // Lógica para eliminar suave (soft delete)
         $detalleProducto->delete();
-    }
+    }    
 }

@@ -8,8 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Incluye jQuery -->
     <link rel="stylesheet" href="{{ asset('css/stylesIndex.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/stylesIngresar.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/stylesDetallesCatalogo.css') }}">
 </head>
 <body>
     <div class="botones-container">
@@ -48,6 +46,7 @@
                         </p>
                         <p><strong>Precio:</strong> ${{ $producto->precio }}</p>
                     </div>
+                    <a href="{{ route('detallesCatalogo.comentarios', ['id' => $producto->id]) }}" style="color: blue;">Comentarios</a>
                 </div>
             </div>
             <div class="card-footer">

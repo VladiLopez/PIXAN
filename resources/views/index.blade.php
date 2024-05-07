@@ -29,6 +29,8 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         @if (Route::has('login'))
                                 @auth
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('stockmateriales.create') }}">Registrar Materiales</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('stockmateriales.index') }}">Mis materiales</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.create') }}">Registrar productos</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.index') }}">Mis productos</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios</a></li>
@@ -305,9 +307,10 @@
                         <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/pixanstudio/photos" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                        <a class="link-dark text-decoration-none me-3" href="assets/politica_de_privacidad.pdf" download>Politica de Privacidad</a>
+                        <a class="link-dark text-decoration-none" href="assets/terminos_de_uso.pdf" download>Terminos de Uso</a>
                     </div>
+
                 </div>
             </div>
         </footer>

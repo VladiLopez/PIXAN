@@ -16,6 +16,8 @@
         <a href="/">INICIO</a>
         <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>
         <a href="/detallesproductos">MIS PRODUCTOS</a>
+        <a href="{{ route('stockmateriales.create') }}">REGISTRAR MATERIALES</a>
+        <a href="{{ route('stockmateriales.index') }}">MIS MATERIALES</a>
     </div>
     <div class="container mt-1">
         <h1 class="section-heading text-uppercase text-center">Usuarios</h1>
@@ -51,12 +53,58 @@
                                         <i class="fas fa-edit"></i>
                                     </a>
 
-                                    <a type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="">
+                                    <a type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$usuario->id}}">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </div>
                             </td>    
                         </tr>
+                        <!-- Modal de confirmación para eliminar -->
+                        <div class="modal fade" id="exampleModal{{$usuario->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Estás seguro de que deseas eliminar a este usuario? 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <!-- Agrega un identificador único al botón "Sí" en el modal de confirmación -->
+                                    <button type="button" class="btn btn-primary" id="confirmDelete{{$usuario->id}}">Sí</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Genera el script para confirmar la eliminación -->
+                            <script>
+                                // Captura el evento de clic en el botón "Sí"
+                                document.getElementById('confirmDelete{{$usuario->id}}').addEventListener('click', function() {
+                                    // Realiza una solicitud HTTP al servidor utilizando JavaScript
+                                    fetch('{{ route("usuarios.destroy", $usuario->id) }}', {
+                                        method: 'DELETE',
+                                        headers: {
+                                            'X-CSRF-TOKEN': '{{ csrf_token() }}', // Agrega el token CSRF para protección
+                                        },
+                                    })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            // Cierra el modal después de confirmar la eliminación
+                                            $('#exampleModal{{$usuario->id}}').modal('hide');
+                                            // Redirige a la página de inicio o a donde desees después de eliminar el elemento
+                                            window.location.href = '/usuarios';
+                                        } else {
+                                            // Maneja errores si la solicitud no fue exitosa
+                                            console.error('Error al eliminar el elemento');
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error al eliminar el elemento:', error);
+                                    });
+                                });
+                            </script>
                     @endforeach
                 </tbody>
             </table>
