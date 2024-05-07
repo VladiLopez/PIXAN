@@ -16,6 +16,8 @@
         <a href="/">INICIO</a>
         <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>
         <a href="/detallesproductos">MIS PRODUCTOS</a>
+        <a href="{{ route('stockmateriales.create') }}">REGISTRAR MATERIALES</a>
+        <a href="{{ route('stockmateriales.index') }}">MIS MATERIALES</a>
     </div>
     <div class="container mt-1">
         <h1 class="section-heading text-uppercase text-center">Usuarios</h1>

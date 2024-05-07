@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DetallesProductoController;
+use App\Http\Controllers\MaterialesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -26,8 +27,7 @@ Route::get('/', function () {
     }
 });
 
-
-Route::resource('detallesproductos', DetallesProductoController::class);
+Route::resource('stockmateriales', MaterialesController::class);
 
 Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])
     ->name('usuarios.index')
@@ -45,30 +45,14 @@ Route::put('/usuarios/{id}', [UserController::class, 'actualizarUsuario'])
     ->name('usuarios.update')
     ->middleware('auth','admin');
 
-
-Route::get('/detallesproductos', [DetallesProductoController::class, 'index'])
-    ->name('detallesproductos.index')
+Route::get('/stockmateriales', [MaterialesController::class, 'index'])
+    ->name('stockmateriales.index')
     ->middleware('auth', 'admin');
 
-Route::get('/detallesproductos/create', [DetallesProductoController::class, 'create'])
-    ->name('detallesproductos.create')
+Route::get('/stockmateriales/create', [MaterialesController::class, 'create'])
+    ->name('stockmateriales.create')
     ->middleware('auth', 'admin');
 
-Route::get('/detallesproductos/show/{id}', [DetallesProductoController::class, 'show'])
-    ->name('detallesproductos.show')
+Route::get('/stockmateriales/show/{id}', [MaterialesController::class, 'show'])
+    ->name('stockmateriales.show')
     ->middleware('auth', 'admin');
-
-Route::get('/detallesproductos/edit/{id}', [DetallesProductoController::class, 'edit'])
-    ->name('detallesproductos.edit')
-    ->middleware('auth', 'admin');
-
-Route::delete('/detallesproductos/{id}', [DetallesProductoController::class, 'destroy'])
-    ->name('detallesproductos.destroy')
-    ->middleware('auth', 'admin');
-
-Route::put('/detallesproductos/update/{id}', [DetallesProductoController::class, 'update'])
-    ->name('detallesproductos.update')
-    ->middleware('auth', 'admin');
-
-Route::get('/catalogo', [DetallesProductoController::class, 'catalogo'])->name('catalogo.productos');
-Route::get('/detallesCatalogo/{id}', [DetallesProductoController::class, 'detallesCatalogo'])->name('detallesCatalogo.productos');

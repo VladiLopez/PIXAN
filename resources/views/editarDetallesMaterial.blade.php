@@ -11,37 +11,30 @@
     <div class="botones-container">
         <a href="/">INICIO</a>
         <a href="/detallesproductos">MIS PRODUCTOS</a>
+        <a href="/stockmateriales">MIS MATERIALES</a>
     </div>
     <div class="container mt-1">
-        <h1 class="section-heading text-uppercase text-center">Editar Producto</h1>
-        <form action="{{ route('detallesproductos.update', $detalleProducto->id) }}" method="POST" enctype="multipart/form-data">
+        <h1 class="section-heading text-uppercase text-center">Editar Material</h1>
+        <form action="{{ route('stockmateriales.update', $stockMateriales->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <label for="nombre" class="form-label">Nombre:</label><br>
-            <input type="text" id="nombre" name="nombre" class="form-control" value="{{ old('nombre', $detalleProducto->nombre) }}"><br>
+            <input type="text" id="nombre" name="nombre" class="form-control" value="{{ old('nombre', $stockMateriales->nombre) }}"><br>
             @error('nombre')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-            <label for="precio" class="form-label">Precio:</label><br>
-            <input type="number" id="precio" name="precio" class="form-control" value="{{ old('precio', $detalleProducto->precio) }}"><br>
-            @error('precio')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-
             <div class="form-floating">
-                <textarea id="descripcion" class="form-control" style="height: 100px;" name="descripcion" placeholder="Describa el producto :p">{{ old('descripcion', $detalleProducto->descripcion) }}</textarea>
-                <label for="descripcion">Descripción:</label>
-            </div>
-            @error('descripcion')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-            
-            <div class="form-floating">
-                <textarea id="caracteristicas" class="form-control" style="height: 100px;" name="caracteristicas" placeholder="Describa las características :p">{{ old('caracteristicas', $detalleProducto->caracteristicas) }}</textarea>
+                <textarea id="caracteristicas" class="form-control" style="height: 100px;" name="caracteristicas" placeholder="Describa las características: ">{{ old('caracteristicas', $stockMateriales->caracteristicas) }}</textarea>
                 <label for="caracteristicas">Características:</label>
             </div>
             @error('caracteristicas')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <label for="marca" class="form-label">Nombre:</label><br>
+            <input type="text" id="marca" name="marca" class="form-control" value="{{ old('marca', $stockMateriales->marca) }}"><br>
+            @error('marca')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
@@ -72,20 +65,14 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-        <label for="imagenes" class="form-label">Imágenes:</label><br>
-            @foreach(explode(',', $detalleProducto->imagenes) as $imagen)
+        <label for="imagen" class="form-label">Imágen:</label><br>
+            @foreach(explode(',', $stockMateriales->imagen) as $image)
                 <div style="width: 100px;">
-                    <img class="img-thumbnail" src="{{ asset('storage/' . $imagen) }}" alt="Imagen del Producto">   
+                    <img class="img-thumbnail" src="{{ asset('storage/' . $image) }}" alt="Imagen del Material">   
                 </div>
             @endforeach
-            <input type="file" id="imagenes" class="form-control" name="imagenes[]" multiple><br>
-            @error('imagenes')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-
-            <label for="tiempo_entrega" class="form-label">Tiempo de Entrega:</label><br>
-            <input type="text" id="tiempo_entrega" name="tiempo_entrega" class="form-control" value="{{ old('tiempo_entrega', $detalleProducto->tiempo_entrega) }}"><br>
-            @error('tiempo_entrega')
+            <input type="file" id="imagen" class="form-control" name="imagen[]" multiple><br>
+            @error('imagen')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
