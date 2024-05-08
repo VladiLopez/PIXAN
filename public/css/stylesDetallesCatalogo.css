@@ -1,0 +1,22 @@
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 10%;
+    border: 1px solid #000;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Estilo para colocar el carrusel a la izquierda y ajustarlo a un cuadrado */
+#carouselExampleIndicators {
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin-right: 20px; /* Espacio entre el carrusel y el contenido */
+}
+
+#carouselExampleIndicators img {
+    width: auto; /* Ancho automático */
+    height: 300px; /* Alto fijo */
+    object-fit: cover; /* Escala la imagen para llenar el contenedor sin distorsionarla */
+}

@@ -1,0 +1,67 @@
+/* stylesIngresar.css */
+.botones-container {
+    background-image: url('../assets/img/header-bg.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+    padding: 20px; /* Espaciado interno */
+}
+
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 10%;
+    border: 1px solid #000;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white; /* Color del texto por defecto */
+    text-decoration: none; /* Quitar subrayado */
+    padding: 8px 16px; /* Espaciado interno */
+    transition: color 0.3s; /* Transición suave del color del texto */
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.95rem;
+    letter-spacing: 0.0625em;
+}
+
+a:hover {
+    color: #FFC800; /* Cambio de color del texto al pasar el ratón */
+}
+
+/* Estilos para los campos del formulario */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 10px; /* Margen inferior */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
+}
+
+/* Estilos para el botón */
+/*
+button[type="submit"] {
+    background-color: blue; /* Color de fondo 
+    color: white; /* Color del texto 
+    padding: 10px 20px; /* Espaciado interno 
+    border: none; /* Quitar borde 
+    border-radius: 5px; /* Bordes redondeado
+    cursor: pointer; /* Cursor de tipo puntero 
+    transition: background-color 0.3s; /* Transición suave 
+}*/
+
+h1, label{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    line-height: 1.2;
+}

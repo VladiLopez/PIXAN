@@ -10,7 +10,6 @@
 <body>
     <div class="botones-container">
         <a href="/">INICIO</a>
-        <a href="/detallesproductos">MIS PRODUCTOS</a>
         <a href="/stockmateriales">MIS MATERIALES</a>
     </div>
     <div class="container mt-1">

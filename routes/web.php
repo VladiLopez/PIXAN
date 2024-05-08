@@ -1,13 +1,9 @@
 <?php
 
-<<<<<<< Updated upstream
-=======
-use App\Http\Controllers\DetallesProductoController;
 use App\Http\Controllers\MaterialesController;
 use App\Http\Controllers\UserController;
->>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +14,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth::check()) {
+        if (Auth::user()->is_admin) {
+            return view('indexUsers');
+        } else {
+            return view('index');
+        }
+    } else {
+        return view('inicio');
+    }
 });
-<<<<<<< Updated upstream
-=======
+
 
 Route::resource('stockmateriales', MaterialesController::class);
 
@@ -54,4 +56,6 @@ Route::get('/stockmateriales/create', [MaterialesController::class, 'create'])
 Route::get('/stockmateriales/show/{id}', [MaterialesController::class, 'show'])
     ->name('stockmateriales.show')
     ->middleware('auth', 'admin');
->>>>>>> Stashed changes
+
+Route::get('/catalogo', [DetallesProductoController::class, 'catalogo'])->name('catalogo.productos');
+Route::get('/detallesCatalogo/{id}', [DetallesProductoController::class, 'detallesCatalogo'])->name('detallesCatalogo.productos');
