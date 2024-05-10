@@ -13,7 +13,7 @@
         <a href="/detallesproductos">MIS PRODUCTOS</a>
         <a href="{{ route('stockmateriales.create') }}">REGISTRAR MATERIALES</a>
         <a href="{{ route('stockmateriales.index') }}">MIS MATERIALES</a>
-        <a href="{{ route('usuarios.index') }}">USUARIOS</a></li>
+        <a href="{{ route('usuarios.index') }}">USUARIOS</a>
     </div>
     <div class="container mt-1">
     <h1 class="section-heading text-uppercase text-center">Ingresar Nuevo Producto</h1>

@@ -4,6 +4,7 @@ use App\Http\Controllers\DetallesProductoController;
 use App\Http\Controllers\MaterialesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\PedidoController;
 use App\Mail\CorreoMailable;
 use App\Models\Pedido;
 use Illuminate\Support\Facades\Route;
@@ -160,3 +161,10 @@ Route::post('/agregarAlCarrito', [CarritoController::class, 'agregarAlCarrito'])
 Route::get('/carrito-compras', [CarritoController::class, 'verCarrito'])
     ->name('verCarrito')
     ->middleware('auth'); // Solo usuarios autenticados pueden ver el carrito
+
+Route::delete('/carrito-compras/{carritoId}', [CarritoController::class, 'eliminarDelCarrito'])
+    ->name('carrito.eliminar')
+    ->middleware('auth');
+
+Route::post('/realizar-pedido', [PedidoController::class, 'realizarPedido'])->name('pedido.realizar');
+Route::get('/confirmacion-pedido', [PedidoController::class, 'confirmacionPedido'])->name('confirmacion.pedido');

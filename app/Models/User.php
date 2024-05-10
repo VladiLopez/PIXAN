@@ -21,6 +21,15 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+
+    public function productosEnCarrito()
+    {
+        return $this->belongsToMany(Detalles_Productos::class, 'carrito_compras', 'user_id', 'producto_id')
+                    ->withPivot('cantidad'); // Si necesitas acceder a la cantidad en el carrito
+    }
+
+
+
     public function carritos()
     {
         return $this->hasMany(Carrito::class);

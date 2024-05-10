@@ -11329,20 +11329,13 @@ img {
   background-image: url('../assets/img/header-bg.jpg'); /* Ruta de la imagen de fondo */
   background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
   padding: 20px; /* Espaciado interno */
+  text-decoration: none;
+  text-align: right; /* Alinear el texto a la derecha */
 }
-
 
 .card-text {
   height: 50px; /* Establece la altura deseada para la descripción */
   overflow: hidden; /* Oculta el exceso de texto */
-}
-
-
-/* stylesIngresar.css */
-.botones-container {
-  background-image: url('../assets/img/header-bg.jpg'); /* Ruta de la imagen de fondo */
-  background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
-  padding: 20px; /* Espaciado interno */
 }
 
 .color-circle {
@@ -11385,18 +11378,6 @@ textarea {
   border-radius: 5px; /* Bordes redondeados */
   box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
 }
-
-/* Estilos para el botón */
-/*
-button[type="submit"] {
-  background-color: blue; /* Color de fondo 
-  color: white; /* Color del texto 
-  padding: 10px 20px; /* Espaciado interno 
-  border: none; /* Quitar borde 
-  border-radius: 5px; /* Bordes redondeado
-  cursor: pointer; /* Cursor de tipo puntero 
-  transition: background-color 0.3s; /* Transición suave 
-}*/
 
 h1, label{
   margin-top: 0;

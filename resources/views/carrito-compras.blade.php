@@ -13,6 +13,7 @@
 <body>
     <div class="botones-container">
         <a href="/">INICIO</a>
+        <a href="{{ route('catalogo.productos') }}">CATÁLOGO</a>
     </div>
     <div class="container">
         <h1 class="my-4">Carrito de Compras</h1>
@@ -30,8 +31,13 @@
                                     <h5>{{ $producto->producto->nombre }}</h5>
                                     <p>Cantidad: {{ $producto->cantidad }}</p>
                                     <p>Precio unitario: ${{ $producto->producto->precio }}</p>
+                                    <span class="badge badge-primary badge-pill">${{ $producto->cantidad * $producto->producto->precio }}</span>
                                 </div>
-                                <span class="badge badge-primary badge-pill">${{ $producto->cantidad * $producto->producto->precio }}</span>
+                                <form action="{{ route('carrito.eliminar', $producto->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                </form>
                             </li>
                             @endforeach
                         </ul>
@@ -45,13 +51,19 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">${{ $total }}</h5>
-                        <form action="{{ route('pedidoRecibido') }}" method="GET">
-                            <button type="submit" class="btn btn-primary">Realizar Pedido</button>
+                        <form id="realizar-pedido-form" action="{{ route('pedido.realizar') }}" method="POST" style="display: none;">
+                            @csrf
                         </form>
+                        <button id="realizar-pedido-btn" class="btn btn-primary">Realizar Pedido</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('realizar-pedido-btn').addEventListener('click', function() {
+            document.getElementById('realizar-pedido-form').submit();
+        });
+    </script>
 </body>
 </html>

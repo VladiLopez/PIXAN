@@ -58,7 +58,7 @@ class CarritoController extends Controller
     {
         // Validar la solicitud
         $request->validate([
-            'carrito_id' => 'required|exists:carrito,id',
+            'id' => 'required|exists:carrito,id',
             'cantidad' => 'required|integer|min:1',
         ]);
 
@@ -90,5 +90,22 @@ class CarritoController extends Controller
 
         // Limpiar el carrito del usuario
         Carrito::where('user_id', $user->id)->delete();
+    }
+
+    public function eliminarDelCarrito($carritoId)
+    {
+        // Buscar el producto en el carrito por su ID
+        $carrito = Carrito::findOrFail($carritoId);
+
+        // Verificar si el usuario autenticado es el propietario del carrito
+        if ($carrito->user_id !== auth()->id()) {
+            // Si el usuario no es el propietario del carrito, redirigir a algún lugar seguro
+            return redirect()->back()->with('error', 'No tienes permiso para realizar esta acción.');
+        }
+
+        // Eliminar el producto del carrito
+        $carrito->delete();
+
+        return redirect()->back()->with('success', 'El producto se ha eliminado del carrito correctamente.');
     }
 }
