@@ -33,57 +33,6 @@ Route::get('/', function () {
     }
 });
 
-
-Route::get('pedidoRecibido', function(){
-    // Obtener el usuario actualmente autenticado
-    $usuario = auth()->user();
-
-    // Verificar si el usuario está autenticado
-    if ($usuario) {
-        // Enviar el correo al correo electrónico del usuario
-        Mail::to($usuario->email)->send(new CorreoMailable);
-
-        // Redirigir a la página de detalles del pedido
-        return redirect()->route('detallesPedido');
-    } else {
-        // Manejar la situación en la que el usuario no está autenticado
-        return redirect()->route('login')->with('error', 'Inicia sesión para realizar un pedido.');
-    }
-})->name('pedidoRecibido');
-
-Route::get('detalles-pedido', function(){
-    // Aquí debes cargar la vista que muestra los detalles del pedido
-    return view('detalles-pedido');
-})->name('detallesPedido');
-
-// En tu archivo de rutas web.php
-use Illuminate\Support\Facades\View;
-
-Route::get('detalles-pedido', function(){
-    // Generar un número de pedido aleatorio
-    $numeroPedido = '#' . mt_rand(100000, 999999);
-
-    // Productos pedidos (aquí puedes obtenerlos desde tu base de datos)
-    $productos = [
-        ['nombre' => 'Producto 1', 'cantidad' => 2, 'precio' => 10.00],
-        ['nombre' => 'Producto 2', 'cantidad' => 1, 'precio' => 15.00],
-        ['nombre' => 'Producto 3', 'cantidad' => 3, 'precio' => 8.00],
-    ];
-
-    // Calcular el total de la compra
-    $totalCompra = collect($productos)->sum(function ($producto) {
-        return $producto['cantidad'] * $producto['precio'];
-    });
-
-    // Cargar la vista y pasar los datos necesarios
-    return View::make('detalles-pedido', [
-        'numeroPedido' => $numeroPedido,
-        'productos' => $productos,
-        'totalCompra' => $totalCompra,
-    ]);
-})->name('detallesPedido');
-
-
 Route::resource('detallesproductos', DetallesProductoController::class);
 Route::resource('stockmateriales', MaterialesController::class);
 

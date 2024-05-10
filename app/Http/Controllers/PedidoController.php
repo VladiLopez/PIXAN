@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\PedidoProducto;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CorreoMailable;
 
 class PedidoController extends Controller
 {
@@ -37,6 +39,8 @@ class PedidoController extends Controller
 
     public function confirmacionPedido()
     {
+        $user = auth()->user();
+        
         // Obtener el último pedido realizado
         $ultimoPedido = Pedido::latest()->first();
 
@@ -47,6 +51,9 @@ class PedidoController extends Controller
         $totalCompra = $productosPedido->sum(function ($producto) {
             return $producto->cantidad * $producto->precio_unitario;
         });
+
+        // Enviar correo electrónico al usuario
+        Mail::to($user->email)->send(new CorreoMailable);
 
         // Renderizar la vista de confirmación del pedido con los datos obtenidos
         return view('detalles-pedido', compact('ultimoPedido', 'productosPedido', 'totalCompra'));
