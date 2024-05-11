@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -17,6 +18,21 @@ class UserController extends Controller
     {
         $usuario = User::findOrFail($id);
         return view('ViewUsuario', ['usuario' => $usuario]);
+    }
+
+    public function MiPerfil()
+    {
+        // Obtener el usuario autenticado
+        $usuario = Auth::user();
+
+        // Verificar si el usuario está autenticado
+        if (!$usuario) {
+            // Si el usuario no está autenticado, redirigirlo a la página de inicio de sesión con un mensaje de error
+            return redirect()->route('login')->with('error', 'Inicia sesión para ver tu perfil.');
+        }
+
+        // Si el usuario está autenticado, mostrar su perfil
+        return view('MyProfile', ['usuario' => $usuario]);
     }
 
     public function editarUsuario($id)

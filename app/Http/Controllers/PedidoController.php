@@ -59,5 +59,13 @@ class PedidoController extends Controller
         return view('detalles-pedido', compact('ultimoPedido', 'productosPedido', 'totalCompra'));
     }
 
+    public function listarPedidos()
+    {
+        // Obtener todos los pedidos
+        $pedidos = Pedido::all();
+        
+        // Pasar los pedidos a la vista
+        return view('lista-pedidos', compact('pedidos'));
+    }
 
 }

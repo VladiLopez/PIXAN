@@ -34,7 +34,7 @@ Route::get('/', function () {
 });
 
 Route::resource('detallesproductos', DetallesProductoController::class);
-Route::resource('stockmateriales', MaterialesController::class);
+Route::resource('stockmateriales', MaterialesController::class)->middleware('auth');
 
 Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])
     ->name('usuarios.index')
@@ -42,7 +42,9 @@ Route::get('/usuarios', [UserController::class, 'mostrarUsuarios'])
 
 Route::get('/ViewUsuario/{id}', [UserController::class, 'mostrarUsuarioEsp'])
     ->name('usuarios.show')
-    ->middleware('auth','admin');
+    ->middleware('auth');
+
+Route::get('/mi-perfil', [UserController::class, 'MiPerfil'])->name('mi.perfil')->middleware('auth');
 
 Route::get('/usuarios/edit/{id}', [UserController::class, 'editarUsuario'])
     ->name('usuarios.edit')
@@ -99,8 +101,8 @@ Route::get('/catalogo', [DetallesProductoController::class, 'catalogo'])
 Route::get('/catalogoNotUser', [DetallesProductoController::class, 'catalogoNotUser'])->name('catalogoNotUser.productos');
 Route::get('/detallesCatalogo/{id}', [DetallesProductoController::class, 'detallesCatalogo'])->name('detallesCatalogo.productos');
 
-Route::get('/detallesCatalogo/{id}/comentarios', [DetallesProductoController::class, 'mostrarComentarios'])->name('detallesCatalogo.comentarios');
-Route::post('/detallesCatalogo/agregar/{id}', [DetallesProductoController::class, 'agregar'])->name('comentario.agregar');
+Route::get('/detallesCatalogo/{id}/comentarios', [DetallesProductoController::class, 'mostrarComentarios'])->name('detallesCatalogo.comentarios')->middleware('auth');
+Route::post('/detallesCatalogo/agregar/{id}', [DetallesProductoController::class, 'agregar'])->name('comentario.agregar')->middleware('auth');
 
 // En tu archivo de rutas web.php
 Route::post('/agregarAlCarrito', [CarritoController::class, 'agregarAlCarrito'])
@@ -115,5 +117,6 @@ Route::delete('/carrito-compras/{carritoId}', [CarritoController::class, 'elimin
     ->name('carrito.eliminar')
     ->middleware('auth');
 
-Route::post('/realizar-pedido', [PedidoController::class, 'realizarPedido'])->name('pedido.realizar');
-Route::get('/confirmacion-pedido', [PedidoController::class, 'confirmacionPedido'])->name('confirmacion.pedido');
+Route::post('/realizar-pedido', [PedidoController::class, 'realizarPedido'])->name('pedido.realizar')->middleware('auth');
+Route::get('/confirmacion-pedido', [PedidoController::class, 'confirmacionPedido'])->name('confirmacion.pedido')->middleware('auth');
+Route::get('pedidos', [PedidoController::class, 'listarPedidos'])->name('pedidos.listar');

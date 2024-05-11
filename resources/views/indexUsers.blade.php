@@ -35,7 +35,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="{{ route('profile.show') }}" style="text-transform: none;">Perfil</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('mi.perfil') }}" style="text-transform: none;">Perfil</a></li>
                                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                                 <li><a class="dropdown-item" href="{{ route('api-tokens.index') }}">API Tokens</a></li>
                                             @endif

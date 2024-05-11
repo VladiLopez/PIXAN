@@ -10,6 +10,7 @@
 <body>
     <div class="botones-container">
         <a href="/">INICIO</a>
+        <a href="{{ route('pedidos.listar') }}">PEDIDOS</a>
         <a href="/detallesproductos">MIS PRODUCTOS</a>
         <a href="{{ route('stockmateriales.create') }}">REGISTRAR MATERIALES</a>
         <a href="{{ route('stockmateriales.index') }}">MIS MATERIALES</a>

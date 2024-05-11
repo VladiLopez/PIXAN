@@ -29,6 +29,7 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         @if (Route::has('login'))
                                 @auth
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('pedidos.listar') }}">Pedidos</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('stockmateriales.create') }}">Registrar Materiales</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('stockmateriales.index') }}">Mis materiales</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('detallesproductos.create') }}">Registrar productos</a></li>
@@ -39,7 +40,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="{{ route('profile.show') }}" style="text-transform: none;">Perfil</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('mi.perfil') }}" style="text-transform: none;">Perfil</a></li>
                                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                                 <li><a class="dropdown-item" href="{{ route('api-tokens.index') }}">API Tokens</a></li>
                                             @endif
