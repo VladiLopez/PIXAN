@@ -34,7 +34,7 @@
                     <td>{{ $pedido->fecha }}</td>
                     <td>{{ $pedido->user->name }}</td>
                     <td>
-                        <a href="" class="btn btn-primary">Ver Detalles</a>
+                        <a href="{{ route('pedidos.show', ['pedido' => $pedido->id]) }}" class="btn btn-primary">Ver Detalles</a>
                     </td>
                 </tr>
                 @endforeach

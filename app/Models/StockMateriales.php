@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class StockMateriales extends Model
 {
-    use SoftDeletes;
+    use HasFactory;
+    use SoftDeletes; //QUITAR PARA HACER EL TEST
     protected $table = 'stockmateriales';
 }

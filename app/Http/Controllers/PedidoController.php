@@ -68,4 +68,9 @@ class PedidoController extends Controller
         return view('lista-pedidos', compact('pedidos'));
     }
 
+    public function show(Pedido $pedido)
+    {
+        $pedido->load('productos'); // Carga la relación productos
+        return view('pedidos', ['pedido' => $pedido]);
+    }
 }

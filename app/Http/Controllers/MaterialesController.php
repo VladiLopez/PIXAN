@@ -170,5 +170,7 @@ class MaterialesController extends Controller
     
         // Lógica para eliminar suave (soft delete)
         $stockMaterial->delete();
+
+        //return redirect()->route('stockmateriales.index'); //Activar para el TEST, el redireccionamineto lo hago con JavaScript en la vista, entonces no es necesario tener aquí un return.
     }    
 }

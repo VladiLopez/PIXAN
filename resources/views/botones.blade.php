@@ -1,5 +1,6 @@
 <div class="botones-container">
     <a href="/">INICIO</a>
+    <a href="{{ route('pedidos.listar') }}">PEDIDOS</a>
     <a href="{{ route('stockmateriales.create') }}">REGISTRAR MATERIALES</a>
     <a href="{{ route('stockmateriales.index') }}">MIS MATERIALES</a>
     <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>

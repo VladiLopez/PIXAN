@@ -5,11 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Carrito;
 use App\Models\Pedido;
+use Illuminate\Support\Facades\Auth;
 
 class CarritoController extends Controller
 {
     public function agregarAlCarrito(Request $request)
     {
+        // Verificar si el usuario está autenticado
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Debes iniciar sesión para agregar productos al carrito.');
+        }
+
         // Obtener el usuario actualmente autenticado
         $user = auth()->user();
 
@@ -32,11 +38,16 @@ class CarritoController extends Controller
             ]);
         }
 
-        return redirect()->route('catalogo.productos');
+        return redirect()->route('catalogo.productos')->with('success', 'Producto agregado al carrito correctamente.');
     }
 
     public function verCarrito()
     {
+        // Verificar si el usuario está autenticado
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Debes iniciar sesión para ver el carrito de compras.');
+        }
+
         // Obtener el usuario actualmente autenticado
         $user = auth()->user();
 
@@ -58,21 +69,28 @@ class CarritoController extends Controller
     {
         // Validar la solicitud
         $request->validate([
-            'id' => 'required|exists:carrito,id',
+            'id' => 'required|exists:carrito,id,user_id,' . Auth::id(),
             'cantidad' => 'required|integer|min:1',
         ]);
 
         // Obtener el registro del carrito a actualizar
-        $carrito = Carrito::findOrFail($request->carrito_id);
+        $carrito = Carrito::findOrFail($request->id);
 
         // Actualizar la cantidad del producto en el carrito
         $carrito->update([
             'cantidad' => $request->cantidad,
         ]);
+
+        return redirect()->back()->with('success', 'El carrito se ha actualizado correctamente.');
     }
 
     public function realizarPedido()
     {
+        // Verificar si el usuario está autenticado
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Debes iniciar sesión para realizar un pedido.');
+        }
+
         // Obtener el usuario actualmente autenticado
         $user = auth()->user();
 
@@ -90,6 +108,8 @@ class CarritoController extends Controller
 
         // Limpiar el carrito del usuario
         Carrito::where('user_id', $user->id)->delete();
+
+        return redirect()->route('pedidos')->with('success', 'Pedido realizado correctamente.');
     }
 
     public function eliminarDelCarrito($carritoId)
