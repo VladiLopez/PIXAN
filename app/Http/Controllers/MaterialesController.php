@@ -50,7 +50,7 @@ class MaterialesController extends Controller
             // Mensajes de error personalizados
             'nombre.required' => 'El campo nombre es obligatorio.',
             'caracteristicas.required' => 'El campo características es obligatorio.',
-            'marca.required' => 'El campo características es obligatorio.',
+            'marca.required' => 'El campo marca es obligatorio.',
             'colores.required' => 'Debe seleccionar al menos un color.',
             'imagen.required' => 'Debe seleccionar al menos una imagen.',
         ]);
@@ -167,16 +167,8 @@ class MaterialesController extends Controller
     {
         // Buscar el detalle del producto específico en la base de datos
         $stockMaterial = StockMateriales::findOrFail($id);
-
-        // Eliminar las imágenes asociadas al producto del almacenamiento de Laravel
-        $imagen = explode(',', $stockMaterial->imagenes);
-        foreach ($imagen as $image) {
-            // Eliminar la imagen del almacenamiento
-            Storage::delete($image);
-            Storage::delete("public/".$image);
-        }
-
-        // Eliminar el detalle del producto
+    
+        // Lógica para eliminar suave (soft delete)
         $stockMaterial->delete();
-    }
+    }    
 }

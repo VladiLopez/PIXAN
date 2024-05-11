@@ -10,6 +10,7 @@
 <body>
     <div class="botones-container">
         <a href="/">INICIO</a>
+        <a href="{{ route('pedidos.listar') }}">PEDIDOS</a>
         <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>
         <a href="/detallesproductos">MIS PRODUCTOS</a>
         <a href="/stockmateriales">MIS MATERIALES</a>
@@ -20,7 +21,7 @@
     <form action="{{ route('stockmateriales.store') }}" method="POST" enctype="multipart/form-data" >
         @csrf
         <label for="nombre" class="form-label">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre" class="form-control" value="{{ old('nombre') }}">
+        <input type="text" id="nombre" name="nombre" class="form-control" value="{{ old('nombre') }}" maxlength="100">
         @error('nombre')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -28,7 +29,7 @@
 
         
         <div class="form-floating">
-            <textarea id="caracteristicas" class="form-control" style="height: 100px;" name="caracteristicas" placeholder="Describa las caracteristias:">{{ old('caracteristicas') }}</textarea>
+            <textarea id="caracteristicas" class="form-control" style="height: 100px;" name="caracteristicas" maxlength="250">{{ old('caracteristicas') }}</textarea>
             <label for="caracteristicas">Características:</label>
         </div>
         @error('caracteristicas')
@@ -36,7 +37,7 @@
         @enderror
         
         <div class="form-floating">
-            <textarea id="marca" class="form-control" style="height: 100px;" name="marca" placeholder="Describa las caracteristias :p">{{ old('marca') }}</textarea>
+            <textarea id="marca" class="form-control" style="height: 100px;" name="marca" maxlength="250">{{ old('marca') }}</textarea>
             <label for="marca">Marca:</label>
         </div>
         @error('marca')

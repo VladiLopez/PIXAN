@@ -60,5 +60,10 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('realizar-pedido-btn').addEventListener('click', function() {
+            document.getElementById('realizar-pedido-form').submit();
+        });
+    </script>
 </body>
 </html>

@@ -11314,3 +11314,111 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+/* styles.css */
+
+/* Estilos para las imágenes */
+img {
+  width: auto;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+/* stylesIngresar.css */
+.botones-container {
+  background-image: url('../assets/img/header-bg.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+  padding: 20px; /* Espaciado interno */
+  text-decoration: none;
+  text-align: right; /* Alinear el texto a la derecha */
+}
+
+.card-text {
+  height: 50px; /* Establece la altura deseada para la descripción */
+  overflow: hidden; /* Oculta el exceso de texto */
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+  border: 1px solid #000;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white; /* Color del texto por defecto */
+  text-decoration: none; /* Quitar subrayado */
+  padding: 8px 16px; /* Espaciado interno */
+  transition: color 0.3s; /* Transición suave del color del texto */
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.95rem;
+  letter-spacing: 0.0625em;
+}
+
+a:hover {
+  color: #FFC800; /* Cambio de color del texto al pasar el ratón */
+}
+
+/* Estilos para los campos del formulario */
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  margin-bottom: 10px; /* Margen inferior */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluir el borde y el relleno en el ancho total */
+}
+
+h1, label{
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+  border: 1px solid #000;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* Estilo para colocar el carrusel a la izquierda y ajustarlo a un cuadrado */
+#carouselExampleIndicators {
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin-right: 20px; /* Espacio entre el carrusel y el contenido */
+}
+
+#carouselExampleIndicators img {
+  width: auto; /* Ancho automático */
+  height: 300px; /* Alto fijo */
+  object-fit: cover; /* Escala la imagen para llenar el contenedor sin distorsionarla */
+}
+
+.comentarios-container {
+  margin-top: 50px;
+}
+
+/* Estilo para cada comentario */
+.comentario {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
