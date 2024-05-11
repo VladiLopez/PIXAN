@@ -9,14 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/stylesIngresar.css') }}">
 </head>
 <body>
-    <div class="botones-container">
-        <a href="/">INICIO</a>
-        <a href="{{ route('stockmateriales.create') }}">REGISTRAR MATERIALES</a>
-        <a href="{{ route('stockmateriales.index') }}">MIS MATERIALES</a>
-        <a href="{{ route('detallesproductos.create') }}">REGISTRAR PRODUCTOS</a>
-        <a href="{{ route('detallesproductos.index') }}">MIS PRODUCTOS</a>
-        <a href="{{ route('usuarios.index') }}">USUARIOS</a></li>
-    </div>
+    @include('botones')
     <div class="container">
         <h1 class="text-center">DETALLES DEL MATERIAL</h1>
         <table  class="table table-striped align-middle">
